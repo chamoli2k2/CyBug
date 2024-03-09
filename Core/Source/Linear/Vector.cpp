@@ -205,7 +205,6 @@ Vector<T>& Vector<T>::operator=(Vector&& theVector)
 {
     if (this != &theVector)
     {
-        #error C2352 operatoer=: a call of a non-static member function requires an object 
         m_Data = theVector.m_Data;
         theVector.m_Data = nullptr;
         m_Size = theVector.m_Size;
@@ -213,8 +212,8 @@ Vector<T>& Vector<T>::operator=(Vector&& theVector)
     }
 
     return *this;
-
 }
+
 
 template <class T>
 bool Vector<T>::operator==(const Vector<T>& theVector) {

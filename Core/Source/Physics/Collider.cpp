@@ -9,7 +9,7 @@ bool Collider::Intersects(const Collider& theOther) const
 {
 	if (this->m_Shape.GetType() == Shape::Type::Circle &&
             theOther.m_Shape.GetType() == Shape::Type::Circle)
-		return intersectCircleCircle(theOther, theOther);
+		return intersectCircleCircle(*this, theOther); // Pass both colliders as arguments
 	return false; // For unsupported type
 }
 
